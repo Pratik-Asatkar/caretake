@@ -1,76 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+{%extends "base.html"%} {%block content%}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-</head>
-
-<body class="bg-gray-100">
-  <div class="flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md w-96">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post"
-        action="{{ url_for('product.add_product') }}" enctype="multipart/form-data">
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-name">
-            Product Name
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-name" type="text" placeholder="Product Name" name="name" />
+<section class="patient-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section-top text-center">
+          <h2>Register New Nurse</h2>
+          <!-- <p>Green above he cattle god saw day multiply under fill in the cattle fowl a all, living, tree word link available in the service for subdue fruit.</p> -->
         </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-description">
-            Short Description
-          </label>
-          <textarea
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-description" placeholder="Product Description" name="short_desc"></textarea>
+      </div>
+    </div>
+    <div class="">
+      <div class="align-self-center">
+        <div class="appointment-form text-center mt-5 mt-lg-0">
+          <h3 class="mb-5">REGISTER NOW</h3>
+          <form
+            action="{{ url_for('product.add_product') }}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <input
+                type="text"
+                id="product-name"
+                name="name"
+                placeholder="Your Name"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Your Name'"
+                required
+              />
+            </div>
+            <div class="form-group">
+                <textarea 
+                id="product-description"
+              placeholder="Nurse Description"
+              name="short_desc"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Short Description'">
+                </textarea>
+            </div>
+            <div class="form-group">
+                <textarea 
+                id="description"
+              placeholder="More Details"
+              name="description"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'More Details'">
+                </textarea>
+            </div>
+            <div class="form-group">
+              <input
+              id="category"
+              type="text"
+              placeholder="Product Name"
+              name="category"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Category'"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+              id="product-price"
+              type="number"
+              name="price"
+              placeholder="Per Day Cost"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Per Day Cost'"
+                required
+              />
+            </div>
+            <div class="form-group">
+                <input
+                id="product-image"
+                type="file"
+                name="img"
+                accept=".jpg,.jpeg,.png"
+                />
+            </div>
+            <button type="submit" class="template-btn">Register</button>
+          </form>
         </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
-            Description
-          </label>
-          <textarea
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="description" placeholder="Product Description" name="description"></textarea>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="category">
-            Category
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="category" type="text" placeholder="Product Name" name="category" />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-price">
-            Product Price
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-price" type="number" name="price" placeholder="Product Price" />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="product-image">
-            Product Image
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="product-image" type="file" name="img" accept=".jpg,.jpeg,.png" />
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit">
-            Add Product
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-</body>
+</section>
 
-</html>
+{%endblock%}

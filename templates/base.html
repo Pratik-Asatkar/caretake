@@ -10,16 +10,16 @@
     <title>Medino</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='')}}assets/images/logo/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/logo/favicon.png')}}" type="image/x-icon">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/animate-3.7.0.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/font-awesome-4.7.0.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/bootstrap-4.1.3.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/owl-carousel.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/linearicons.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='')}}assets/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate-3.7.0.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/font-awesome-4.7.0.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap-4.1.3.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl-carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/jquery.datetimepicker.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/linearicons.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css')}}">
 </head>
 <body>
     <!-- Preloader Starts -->
@@ -29,7 +29,7 @@
     <!-- Preloader End -->
 
     <!-- Header Area Starts -->
-    <header class="header-area">
+    <!-- <header class="header-area">
         <div class="header-top">
             <div class="container">
                 <div class="row">
@@ -51,31 +51,21 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div id="header" id="home">
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.html"><img src="assets/images/logo/logo.png" alt="" title="" /></a>
+                    <!-- <a href="/"><img src="static/assets/images/logo/logo.png" alt="" title="" /></a> -->
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.html">Home</a></li>
-                        <li><a href="departments.html">departments</a></li>
-                        <li><a href="doctors.html">doctors</a></li>
-                        <li class="menu-has-children"><a href="">Pages</a>
-                            <ul>
-                                <li><a href="about.html">about us</a></li>
-                                <li><a href="elements.html">elements</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-has-children"><a href="">blog</a>
-                            <ul>
-                                <li><a href="blog-home.html">blog home</a></li>
-                                <li><a href="blog-details.html">blog details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>			          				          
+                        <li class="menu-active"><a href="/">Home</a></li>
+                        <li><a href="{{ url_for('auth.login') }}">login</a></li>
+                        <li><a href="{{ url_for('auth.register') }}">register</a></li>
+                        <li><a href="/category/Nurse">nurses</a></li>
+                        <li><a href="{{ url_for('profile') }}">profile</a></li>		
+                        <li><a href="{{ url_for('cart.view_cart') }}">cart</a></li>			          				          
                     </ul>
                 </nav><!-- #nav-menu-container -->		    		
                 </div>
